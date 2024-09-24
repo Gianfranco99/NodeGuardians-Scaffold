@@ -1,4 +1,7 @@
-# 🏗 Scaffold-Stark
+# 🏗 Scaffold-Stark-Node Guardians
+
+<h1 align="center">In this repo we are going to use scarb 2.7.0 since it is the version compatible with Node guardians quests</h1>
+
 
 <h4 align="center">
   <a href="https://www.docs.scaffoldstark.com/">Documentation</a> |
@@ -45,15 +48,15 @@ cargo install starknet-devnet --version 0.2.0
 
 ### Scarb version
 
-To ensure the proper functioning of scaffold-stark, your local `Scarb` version must be `2.8.2`. To accomplish this, first check your local Scarb version:
+To ensure the proper functioning of scaffold-stark, your local `Scarb` version must be `2.7.0`. To accomplish this, first check your local Scarb version:
 
 ```sh
 scarb --version
 ```
 
-If your local Scarb version is not `2.8.2`, you need to install it.
+If your local Scarb version is not `2.7.0`, you need to install it.
 
-- Install Scarb `2.8.2` via `asdf` ([instructions](https://docs.swmansion.com/scarb/download.html#install-via-asdf)).
+- Install Scarb `2.7.0` via `asdf` ([instructions](https://docs.swmansion.com/scarb/download.html#install-via-asdf)).
 
 ### Starknet Foundry version
 
@@ -70,9 +73,9 @@ If your Starknet Foundry version is not `0.27.0`, you need to install it.
 ## Compatible versions
 
 - Starknet-devnet - v0.2.0
-- Scarb - v2.8.2
+- Scarb - v2.7.0
 - Snforge - v0.27.0
-- Cairo - v2.8.2
+- Cairo - v2.7.0
 - Rpc - v0.7.0
 
 ## Quickstart with Starknet-Devnet
@@ -82,8 +85,10 @@ To get started with Scaffold-Stark, follow the steps below:
 1. Clone this repo and install dependencies
 
 ```bash
-git clone https://github.com/Scaffold-Stark/scaffold-stark-2.git
-cd scaffold-stark-2
+git clone https://github.com/Gianfranco99/node-guardians-scaffold.git
+cd node-guardians-scaffold
+git fetch
+git checkout < name-of-ctf > 
 yarn install
 ```
 
