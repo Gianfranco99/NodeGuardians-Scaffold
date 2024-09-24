@@ -7,7 +7,7 @@ const deployedContracts = {
   devnet: {
     YourContract: {
       address:
-        "0x6aadd9439ce79bc27a2889fa2bc4e1c3e58e5c8e8ef13727994f6dffa5e3169",
+        "0x88924f928157ec234676c2f213b52bf3bbb53604dbf7dc89893c1a79fd1923",
       abi: [
         {
           type: "impl",
@@ -260,6 +260,77 @@ const deployedContracts = {
       ],
       classHash:
         "0x1869d0ec17bc208490090959bbba4879386be266b4218f64232125d987a1a7a",
+    },
+    BadMarket: {
+      address:
+        "0x63494ace618571bb95b1b8e10b74c331a83dc7526857c80173a50fa78a5cd3f",
+      abi: [
+        {
+          type: "impl",
+          name: "BadMarketImpl",
+          interface_name: "contracts::BadMarket::IBadMarket",
+        },
+        {
+          type: "interface",
+          name: "contracts::BadMarket::IBadMarket",
+          items: [
+            {
+              type: "function",
+              name: "incense_sold",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "coin_balance",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "claim_coin",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "buy_incense",
+              inputs: [
+                {
+                  name: "amount",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::BadMarket::BadMarket::Event",
+          kind: "enum",
+          variants: [],
+        },
+      ],
+      classHash:
+        "0x5863e211cde5b2d90b4d441f5349367c184b6c5ec22bc4e558b68f1df722c3e",
     },
   },
 } as const;

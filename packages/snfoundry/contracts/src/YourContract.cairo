@@ -1,3 +1,6 @@
+//Hint: you can modify this contract to call BadMarket contract and resolve the challenge of Unsafe Math.
+
+
 #[starknet::interface]
 pub trait IYourContract<TContractState> {
     fn greeting(self: @TContractState) -> ByteArray;
