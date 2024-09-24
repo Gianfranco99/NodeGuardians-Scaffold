@@ -1,4 +1,7 @@
-# 🏗 Scaffold-Stark
+# 🏗 Scaffold-Stark-Node Guardians
+
+<h1 align="center">In this repo we are going to use scarb 2.7.0 since it is the version compatible with Node guardians quests</h1>
+
 
 <h4 align="center">
   <a href="https://www.docs.scaffoldstark.com/">Documentation</a> |
