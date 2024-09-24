@@ -7,7 +7,7 @@ const deployedContracts = {
   devnet: {
     YourContract: {
       address:
-        "0x6aadd9439ce79bc27a2889fa2bc4e1c3e58e5c8e8ef13727994f6dffa5e3169",
+        "0x71ce5f05765d09430ca2d207f663cd30d7db5c8843e62b0a3c78825a50e965d",
       abi: [
         {
           type: "impl",
@@ -260,6 +260,209 @@ const deployedContracts = {
       ],
       classHash:
         "0x1869d0ec17bc208490090959bbba4879386be266b4218f64232125d987a1a7a",
+    },
+    BadMarket: {
+      address:
+        "0x63494ace618571bb95b1b8e10b74c331a83dc7526857c80173a50fa78a5cd3f",
+      abi: [
+        {
+          type: "impl",
+          name: "BadMarketImpl",
+          interface_name: "contracts::BadMarket::IBadMarket",
+        },
+        {
+          type: "interface",
+          name: "contracts::BadMarket::IBadMarket",
+          items: [
+            {
+              type: "function",
+              name: "incense_sold",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "coin_balance",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "claim_coin",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "buy_incense",
+              inputs: [
+                {
+                  name: "amount",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::BadMarket::BadMarket::Event",
+          kind: "enum",
+          variants: [],
+        },
+      ],
+      classHash:
+        "0x5863e211cde5b2d90b4d441f5349367c184b6c5ec22bc4e558b68f1df722c3e",
+    },
+    Catacombs: {
+      address:
+        "0x5f494e9bf074b30b2ad7a227adc2ba54a38e39fc61f8c1819d03548608ac863",
+      abi: [
+        {
+          type: "impl",
+          name: "CatacombsImpl",
+          interface_name: "contracts::Catacombs::ICatacombs",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "struct",
+          name: "contracts::Catacombs::Chest",
+          members: [
+            {
+              name: "is_open",
+              type: "core::bool",
+            },
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::Catacombs::ICatacombs",
+          items: [
+            {
+              type: "function",
+              name: "get_entry_code",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "get_brightness",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "is_tile_safe",
+              inputs: [
+                {
+                  name: "tile_id",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "get_chest",
+              inputs: [],
+              outputs: [
+                {
+                  type: "contracts::Catacombs::Chest",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "write",
+              inputs: [
+                {
+                  name: "slot_index",
+                  type: "core::felt252",
+                },
+                {
+                  name: "value",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::Catacombs::Catacombs::Event",
+          kind: "enum",
+          variants: [],
+        },
+      ],
+      classHash:
+        "0x2f4e432e0b68660f8c5adbf6c85bcca942d360ddcde2e8b805d5a4a11408adf",
     },
   },
 } as const;

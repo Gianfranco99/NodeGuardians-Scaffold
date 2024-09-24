@@ -48,6 +48,14 @@ const deployScript = async (): Promise<void> => {
       owner: deployer.address,
     },
   });
+
+    await deployContract({
+      contract: "Catacombs",
+      constructorArgs: {
+        owner: deployer.address,
+      },
+    });
+
 };
 
 deployScript()
