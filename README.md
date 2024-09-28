@@ -74,14 +74,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify
 ```
   
 
-# Add Rust paths to the .bashrc file
-```sh
-echo 'export CARGO_HOME="/home/your_user/sgoinfre/.cargo"' 
-echo 'export RUSTUP_HOME="/home/your_user/sgoinfre/.rustup"'
-echo 'export PATH="$CARGO_HOME/bin:$PATH"' 
-```
-  
-
 # Reload .bashrc
 ```sh
 source ~/.bashrc
