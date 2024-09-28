@@ -32,6 +32,109 @@ Before you begin, you need to install the following tools:
 - [asdf](https://asdf-vm.com/guide/getting-started.html)
 - [Cairo 1.0 extension for VSCode](https://marketplace.visualstudio.com/items?itemName=starkware.cairo1)
 
+
+## 1. Yarn Installation
+
+### Commands
+# Download and install Yarn in sgoinfre
+cd /home/your_user/sgoinfre
+curl -o- -L https://yarnpkg.com/install.sh | bash
+
+# Add Yarn to PATH in the .bashrc file
+echo 'export PATH="/home/your_user/sgoinfre/.yarn/bin:$PATH"' >> ~/.bashrc
+
+# Reload .bashrc
+source ~/.bashrc
+
+# Verify the installation
+yarn --version
+
+
+# Clone and compile Git in sgoinfre
+cd /home/your_user/sgoinfre
+git clone https://github.com/git/git.git
+cd git
+make prefix=/home/your_user/sgoinfre/git all
+sudo make prefix=/home/your_user/sgoinfre/git install
+
+# Add Git to PATH in the .bashrc file
+echo 'export PATH="/home/your_user/sgoinfre/git/bin:$PATH"' >> ~/.bashrc
+
+# Reload .bashrc
+source ~/.bashrc
+
+# Verify the installation
+git --version
+
+# Set Rust installation paths in sgoinfre and run the installer
+export CARGO_HOME="/home/your_user/sgoinfre/.cargo"
+export RUSTUP_HOME="/home/your_user/sgoinfre/.rustup"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path --default-toolchain stable
+
+# Add Rust paths to the .bashrc file
+echo 'export CARGO_HOME="/home/your_user/sgoinfre/.cargo"' >> ~/.bashrc
+echo 'export RUSTUP_HOME="/home/your_user/sgoinfre/.rustup"' >> ~/.bashrc
+echo 'export PATH="$CARGO_HOME/bin:$PATH"' >> ~/.bashrc
+
+# Reload .bashrc
+source ~/.bashrc
+
+# Verify the installation
+rustc --version
+cargo --version
+
+
+# Clone asdf into sgoinfre
+git clone https://github.com/asdf-vm/asdf.git /home/your_user/sgoinfre/.asdf --branch v0.10.0
+
+# Add asdf to the .bashrc file
+echo 'export ASDF_DATA_DIR="/home/your_user/sgoinfre/.asdf"' >> ~/.bashrc
+echo '. /home/your_user/sgoinfre/.asdf/asdf.sh' >> ~/.bashrc
+
+# Reload .bashrc
+source ~/.bashrc
+
+# Add the starknet-foundry plugin to asdf
+asdf plugin add starknet-foundry
+
+# Install the latest version of starknet-foundry
+asdf install starknet-foundry latest
+asdf global starknet-foundry latest
+
+# Verify the installation
+starknet-foundry --version
+
+
+# Yarn in sgoinfre
+export PATH="/home/your_user/sgoinfre/.yarn/bin:$PATH"
+
+# Git in sgoinfre
+export PATH="/home/your_user/sgoinfre/git/bin:$PATH"
+
+# Rust in sgoinfre
+export CARGO_HOME="/home/your_user/sgoinfre/.cargo"
+export RUSTUP_HOME="/home/your_user/sgoinfre/.rustup"
+export PATH="$CARGO_HOME/bin:$PATH"
+
+# asdf in sgoinfre
+export ASDF_DATA_DIR="/home/your_user/sgoinfre/.asdf"
+. /home/your_user/sgoinfre/.asdf/asdf.sh
+
+# Verify Yarn
+yarn --version
+
+# Verify Git
+git --version
+
+# Verify Rust
+rustc --version
+cargo --version
+
+# Verify asdf and starknet-foundry
+asdf --version
+starknet-foundry --version
+
+
 ### Starknet-devnet version
 
 To ensure the proper functioning of scaffold-stark, your local `starknet-devnet` version must be `0.2.0`. To accomplish this, first check your local starknet-devnet version:
